@@ -1,0 +1,49 @@
+{{! A Handlebars sample, kept idiomatic so it is worth opening in the editor. }}
+
+{{!-- A block comment, which may itself contain {{mustaches}}. --}}
+
+<!DOCTYPE html>
+<html lang="{{locale}}">
+  <head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+  </head>
+
+  <body class="{{#if dark}}theme-dark{{else}}theme-light{{/if}}">
+
+    <h1>{{title}}</h1>
+
+    {{! An unescaped value, both spellings. }}
+    <div class="intro">{{{html}}}</div>
+    <div class="intro">{{& html}}</div>
+
+    {{#if products}}
+      <ul>
+        {{#each products}}
+          <li data-index="{{@index}}">
+            <a href="{{url}}">{{name}}</a> &mdash; {{price}}
+            {{#unless available}}<em>out of stock</em>{{/unless}}
+          </li>
+        {{/each}}
+      </ul>
+    {{else}}
+      <p>{{t "catalog.empty"}}</p>
+    {{/if}}
+
+    {{#with owner}}
+      <address>{{firstName}} {{lastName}}</address>
+    {{/with}}
+
+    {{> footer year=2026 class="muted"}}
+
+    {{#> layout}}
+      Block partial content.
+    {{/layout}}
+
+    {{log "rendered" level="debug"}}
+
+    <script type="text/x-handlebars-template">
+      {{#each items}}<span>{{this}}</span>{{/each}}
+    </script>
+  </body>
+</html>
