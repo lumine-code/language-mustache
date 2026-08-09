@@ -2,11 +2,11 @@ describe("Mustache grammar", () => {
   let grammar = null;
 
   beforeEach(() => {
-    waitsForPromise(() => atom.packages.activatePackage("language-html"));
+    waitsForPromise(() => lumine.packages.activatePackage("language-html"));
 
-    waitsForPromise(() => atom.packages.activatePackage("language-mustache"));
+    waitsForPromise(() => lumine.packages.activatePackage("language-mustache"));
 
-    runs(() => (grammar = atom.grammars.grammarForScopeName("text.html.mustache")));
+    runs(() => (grammar = lumine.grammars.grammarForScopeName("text.html.mustache")));
   });
 
   it("parses the grammar", () => {

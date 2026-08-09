@@ -7,12 +7,12 @@ const path = require("path");
 
 describe("Mustache sample fixtures", () => {
   beforeEach(async () => {
-    await atom.packages.activatePackage("language-html");
-    await atom.packages.activatePackage("language-mustache");
+    await lumine.packages.activatePackage("language-html");
+    await lumine.packages.activatePackage("language-mustache");
   });
 
   it("tokenizes sample.hbs", async () => {
-    const editor = await atom.workspace.open(path.join(__dirname, "fixtures", "sample.hbs"));
+    const editor = await lumine.workspace.open(path.join(__dirname, "fixtures", "sample.hbs"));
 
     expect(editor.getGrammar().scopeName).toBe("text.html.mustache");
 
