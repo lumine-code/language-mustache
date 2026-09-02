@@ -10,7 +10,7 @@
   },
   "treeSitter": {
     "parserSource": "github:bennypowers/tree-sitter-handlebars#6cf6821144efca0ba9327497f0523f5ebc04abef",
-    "wasmBuildTool": "tree-sitter-cli#v0.26.13",
+    "wasmBuildTool": "tree-sitter-cli#v0.27.0",
     "grammar": "handlebars.wasm",
     "highlightsQuery": "handlebars-highlights.scm"
   }
