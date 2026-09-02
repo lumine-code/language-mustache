@@ -2,16 +2,19 @@
   "name": "language-mustache",
   "author": "lumine-code",
   "version": "1.0.0",
+  "main": "lib/main",
   "description": "Mustache and Handlebars language support.",
   "keywords": [
     "handlebars",
     "hbs",
     "template",
-    "ractive"
+    "ractive",
+    "tree-sitter"
   ],
   "license": "MIT",
   "files": [
     "grammars",
+    "lib",
     "spec"
   ],
   "engines": {
@@ -27,6 +30,18 @@
     "lint": "eslint . --max-warnings 0",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
+  },
+  "consumedServices": {
+    "hyperlink.injection": {
+      "versions": {
+        "^1.0.0": "consumeHyperlinkInjection"
+      }
+    },
+    "todo.injection": {
+      "versions": {
+        "^1.0.0": "consumeTodoInjection"
+      }
+    }
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

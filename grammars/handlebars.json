@@ -1,0 +1,17 @@
+{
+  "name": "Mustache and Handlebars",
+  "scopeName": "text.html.mustache",
+  "type": "tree-sitter",
+  "parser": "tree-sitter-handlebars",
+  "injectionNames": ["handlebars", "hbs", "mustache"],
+  "fileTypes": ["handlebars", "hbs", "hjs", "mst", "mu", "mustache", "rac", "ractive", "stache"],
+  "comments": {
+    "start": "{{! "
+  },
+  "treeSitter": {
+    "parserSource": "github:bennypowers/tree-sitter-handlebars#6cf6821144efca0ba9327497f0523f5ebc04abef",
+    "wasmBuildTool": "tree-sitter-cli#v0.26.13",
+    "grammar": "handlebars.wasm",
+    "highlightsQuery": "handlebars-highlights.scm"
+  }
+}
