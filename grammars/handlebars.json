@@ -3,7 +3,7 @@
   "scopeName": "text.html.mustache",
   "type": "tree-sitter",
   "parser": "tree-sitter-handlebars",
-  "injectionNames": ["handlebars", "hbs", "mustache"],
+  "injectionNames": ["handlebars", "hbs", "htmlbars", "mustache"],
   "fileTypes": ["handlebars", "hbs", "hjs", "mst", "mu", "mustache", "rac", "ractive", "stache"],
   "comments": {
     "start": "{{! "
