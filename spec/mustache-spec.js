@@ -12,7 +12,7 @@ describe("Mustache and Handlebars Tree-sitter grammar", () => {
     await languageMode.ready;
 
     expect(editor.getGrammar().scopeName).toBe("text.html.mustache");
-    expect(languageMode.tree.rootNode.hasError).toBe(false);
+    expect((await editor.getSyntaxDiagnostics()).hasError).toBe(false);
     expect(editor.scopeDescriptorForBufferPosition([0, 4]).getScopesArray()).toContain(
       "comment.block.mustache",
     );
