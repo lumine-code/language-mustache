@@ -12,6 +12,7 @@
     "parserSource": "github:bennypowers/tree-sitter-handlebars#6cf6821144efca0ba9327497f0523f5ebc04abef",
     "wasmBuildTool": "tree-sitter-cli#v0.27.0",
     "grammar": "handlebars.wasm",
-    "highlightsQuery": "handlebars-highlights.scm"
+    "highlightsQuery": "handlebars-highlights.scm",
+    "injectionsQuery": "handlebars-injections.scm"
   }
 }

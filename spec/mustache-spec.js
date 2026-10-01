@@ -2,7 +2,7 @@ const path = require("path");
 
 describe("Mustache and Handlebars Tree-sitter grammar", () => {
   beforeEach(async () => {
-    await lumine.packages.activatePackage("language-html");
+    await lumine.packages.activatePackage(path.resolve(__dirname, "..", "..", "language-html"));
     await lumine.packages.activatePackage("language-mustache");
   });
 
@@ -12,7 +12,7 @@ describe("Mustache and Handlebars Tree-sitter grammar", () => {
     await languageMode.ready;
 
     expect(editor.getGrammar().scopeName).toBe("text.html.mustache");
-    expect((await editor.getSyntaxDiagnostics()).hasError).toBe(false);
+    expect(editor.languageMode.tree.rootNode.hasError).toBe(false);
     expect(editor.scopeDescriptorForBufferPosition([0, 4]).getScopesArray()).toContain(
       "comment.block.mustache",
     );
@@ -24,25 +24,40 @@ describe("Mustache and Handlebars Tree-sitter grammar", () => {
     );
   });
 
-  it("registers HTML over the non-Handlebars text ranges", () => {
-    const registrations = [];
-    const previous = lumine.grammars.addInjectionPoint;
-    lumine.grammars.addInjectionPoint = (scopeName, options) => {
-      registrations.push({ scopeName, options });
-      return { dispose() {} };
+  it("keeps nested template text in one HTML document across a local edit", async () => {
+    const editor = await lumine.workspace.open();
+    editor.setGrammar(lumine.grammars.grammarForScopeName("text.html.mustache"));
+    editor.setText(
+      "<section>{{#if visible}}<article>{{#each items}}<b>{{name}}</b>{{/each}}</article>{{/if}}</section>",
+    );
+    await editor.languageMode.ready;
+    await editor.languageMode.atTransactionEnd();
+
+    const assertHTML = () => {
+      const layers = editor.languageMode
+        .getAllInjectionLayers()
+        .filter((layer) => layer.grammar.scopeName === "text.html.basic");
+      expect(layers.length).toBe(1);
+      expect(layers[0].tree.rootNode.hasError).toBe(false);
+      const textNodes = editor.languageMode.tree.rootNode.descendantsOfType("text");
+      expect(textNodes.length).toBe(6);
+      expect(
+        layers[0].getCurrentRanges().map((range) => editor.getTextInBufferRange(range)),
+      ).toEqual(textNodes.map((node) => node.text));
     };
+    assertHTML();
 
-    try {
-      require("../lib/main").activate();
-    } finally {
-      lumine.grammars.addInjectionPoint = previous;
-    }
-
-    const injection = registrations.find(({ options }) => options.type === "template");
-    const text = [{ type: "text" }, { type: "text" }];
-    const node = { descendantsOfType: () => text };
-    expect(injection.scopeName).toBe("text.html.mustache");
-    expect(injection.options.language()).toBe("html");
-    expect(injection.options.content(node)).toBe(text);
+    const buffer = editor.getBuffer();
+    const index = editor.getText().indexOf("<b>");
+    buffer.setTextInRange(
+      [buffer.positionForCharacterIndex(index), buffer.positionForCharacterIndex(index + 3)],
+      '<b class="active">',
+    );
+    await editor.languageMode.atTransactionEnd();
+    assertHTML();
+    const point = buffer.positionForCharacterIndex(editor.getText().indexOf("active"));
+    expect(editor.scopeDescriptorForBufferPosition(point).getScopesArray()).toContain(
+      "string.quoted.double.html",
+    );
   });
 });
