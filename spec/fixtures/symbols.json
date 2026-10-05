@@ -1,0 +1,13 @@
+{
+  "text.html.mustache": {
+    "text": "{{#*inline \"card\"}}Hello {{name}}{{/inline}}\n{{#each items as |item|}}{{item}}{{/each}}\n{{> card}}",
+    "symbols": [
+      {
+        "name": "card",
+        "tag": "function"
+      }
+    ],
+    "absent": ["name", "each", "items", "item"],
+    "only": true
+  }
+}

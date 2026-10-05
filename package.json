@@ -39,6 +39,7 @@
   },
   "specPackages": [
     "language-hyperlink",
-    "language-todo"
+    "language-todo",
+    "symbol-tree-sitter"
   ]
 }

@@ -13,6 +13,7 @@
     "wasmBuildTool": "tree-sitter-cli#v0.27.0",
     "grammar": "handlebars.wasm",
     "highlightsQuery": "handlebars-highlights.scm",
-    "injectionsQuery": "handlebars-injections.scm"
+    "injectionsQuery": "handlebars-injections.scm",
+    "tagsQuery": "handlebars-tags.scm"
   }
 }
