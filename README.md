@@ -2,6 +2,8 @@
 
 Mustache and Handlebars language support.
 
+Fork of [pulsar-edit/pulsar](https://github.com/pulsar-edit/pulsar) (`packages/language-mustache`).
+
 ## Features
 
 - **Grammars**: provides a Tree-sitter grammar built from [tree-sitter-handlebars](https://github.com/bennypowers/tree-sitter-handlebars).
