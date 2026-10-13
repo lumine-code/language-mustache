@@ -9,6 +9,8 @@ Fork of [pulsar-edit/pulsar](https://github.com/pulsar-edit/pulsar) (`packages/l
 - **Grammars**: provides a Tree-sitter grammar built from [tree-sitter-handlebars](https://github.com/bennypowers/tree-sitter-handlebars).
 - **Syntax highlighting**: full grammar coverage for Mustache and Handlebars files.
 
+![Mustache and Handlebars syntax highlighting at the default editor font size.](.github/demo.png)
+
 ## Installation
 
 To install `language-mustache` search for it in the Install pane of the Lumine settings, or run the command `lumine --install lumine-code/language-mustache`.

@@ -1,0 +1,16 @@
+{
+  "title": "language-mustache",
+  "description": "Mustache and Handlebars syntax highlighting in the editor.",
+  "recordedOn": "2026-10-13",
+  "sourceRevision": "1c72510faa658a3cd929a54a1ea9550ddb458f2c",
+  "mode": "normal",
+  "fontSettings": "default",
+  "images": [
+    {
+      "file": "demo.png",
+      "label": "Mustache and Handlebars syntax highlighting at the default editor font size.",
+      "width": 1100,
+      "height": 820
+    }
+  ]
+}
