@@ -1,16 +1,61 @@
 {
   "title": "language-mustache",
-  "description": "Mustache and Handlebars syntax highlighting in the editor.",
-  "recordedOn": "2026-10-13",
-  "sourceRevision": "1c72510faa658a3cd929a54a1ea9550ddb458f2c",
+  "description": "Mustache and Handlebars syntax highlighting at the default editor font size.",
+  "recordedOn": "2026-10-14",
+  "sourceRevision": "841e4b9b61a85a8801a4d232319d42edb80105e1",
+  "themeSourceRevision": "14a69683b0e3238e2bc128fbfae3866c1e4ee9c6",
   "mode": "normal",
   "fontSettings": "default",
+  "scenario": "demo.js",
+  "recipeHash": "72be180b07cfdd2b4a684da52061b2cf78725f890b48f19791ef6fd0d2602110",
+  "environment": {
+    "platform": "win32",
+    "arch": "x64",
+    "electron": "44.7.0",
+    "chrome": "152.0.7977.130",
+    "devicePixelRatio": 1,
+    "locale": "en-GB",
+    "fontFamily": "Fira Code, Menlo, DejaVu Sans Mono, Consolas, monospace",
+    "fontSize": 14,
+    "themes": ["one-day-syntax", "one-day-ui"]
+  },
+  "viewport": { "width": 1100, "height": 820 },
+  "cornerRadius": 10,
+  "sources": {
+    "editor": {
+      "revision": "c4d7a05fe6960ae6fb041981d6cf13e9c0286b17",
+      "dirty": true,
+      "workingTreeHash": "c8c1ecbfffafd0d4ca1f3ef718222e809b0d3f3aabe3d890d222f58976eb8817"
+    },
+    "package": {
+      "revision": "841e4b9b61a85a8801a4d232319d42edb80105e1",
+      "dirty": true,
+      "workingTreeHash": "2b919b6dca73a4bed17208d5d5acdc6c00f9dc47afa61f8896d8e00d12d98af2"
+    },
+    "language-mustache": {
+      "revision": "841e4b9b61a85a8801a4d232319d42edb80105e1",
+      "dirty": true,
+      "workingTreeHash": "2b919b6dca73a4bed17208d5d5acdc6c00f9dc47afa61f8896d8e00d12d98af2"
+    },
+    "one-theme": {
+      "revision": "14a69683b0e3238e2bc128fbfae3866c1e4ee9c6",
+      "dirty": true,
+      "workingTreeHash": "50ec2f83a6347dd8113870992ec4eb2be4014f3d9e12213c2f51b543f1eca793"
+    }
+  },
+  "fixtures": [
+    {
+      "file": "example.hbs",
+      "sha256": "f5ff105f88a4d3b7810cf67967128e641df795a10200fed332a6f2c698a655a8"
+    }
+  ],
   "images": [
     {
       "file": "demo.png",
       "label": "Mustache and Handlebars syntax highlighting at the default editor font size.",
       "width": 1100,
-      "height": 820
+      "height": 820,
+      "sha256": "13bbde632e62848b303d3818cf7032fff51c598db1afd616fc923eb7eafa8501"
     }
   ]
 }
