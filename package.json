@@ -13,6 +13,7 @@
   "license": "MIT",
   "files": [
     "grammars",
+    "settings",
     "spec",
     "THIRD_PARTY_NOTICES"
   ],
@@ -41,6 +42,10 @@
   "specPackages": [
     "language-hyperlink",
     "language-todo",
-    "symbol-tree-sitter"
+    "symbol-tree-sitter",
+    "language-html",
+    "language-source",
+    "language-javascript",
+    "language-css"
   ]
 }

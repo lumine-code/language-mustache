@@ -1,0 +1,11 @@
+{
+  ".text.html.mustache": {
+    "editor": {
+      "commentStart": "{{!-- ",
+      "commentEnd": " --}}",
+      "commentDelimiters": {
+        "block": ["{{!--", "--}}"]
+      }
+    }
+  }
+}
