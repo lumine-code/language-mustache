@@ -15,6 +15,9 @@
     "grammar": "handlebars.wasm",
     "highlightsQuery": "handlebars-highlights.scm",
     "injectionsQuery": "handlebars-injections.scm",
-    "tagsQuery": "handlebars-tags.scm"
+    "tagsQuery": "handlebars-tags.scm",
+    "contentEditPolicies": {
+      "content-words": "../lib/content-edit-policy.js"
+    }
   }
 }

@@ -4,7 +4,8 @@
   ; HTML markup remains template text: native template comments must suppress
   ; expressions even when HTML's own scoped settings are active.
   (#set! injection.language-scope "text.html.mustache")
-  (#set! injection.combined))
+  (#set! injection.combined)
+  (#set! injection.content-edit-policy "content-words"))
 
 ; Annotation candidates are filtered by the target grammar.
 ((comment) @injection.owner @injection.content

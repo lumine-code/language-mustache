@@ -13,6 +13,7 @@
   "license": "MIT",
   "files": [
     "grammars",
+    "lib",
     "settings",
     "spec",
     "THIRD_PARTY_NOTICES"
